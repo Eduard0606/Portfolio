@@ -1,3 +1,3 @@
 export default {
-  base: '/portfolio/'
+  base: '/Portfolio/'
 }
