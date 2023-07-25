@@ -77,9 +77,9 @@ section {
 }
 
 .home {
-   /* background: url(/home.jpg) no-repeat;
-   background-size: cover;
-   background-position: center; */
+   background: url(/O1eUsE4bUsQ.jpg) no-repeat;
+   background-size: 700px;
+   background-position: center right;
    display: flex;
    align-items: center;
    height: 100vh;
@@ -193,7 +193,8 @@ section {
    transition: .5s;
    white-space: nowrap;
 }
-button{
+
+button {
    position: relative;
    display: inline-flex;
    justify-content: center;
@@ -213,6 +214,7 @@ button{
    transition: .5s;
    white-space: nowrap;
 }
+
 .btn-box a:hover {
    color: #00abf0;
 }
@@ -348,6 +350,7 @@ button{
       pointer-events: auto;
    }
 }
+
 
 .about {
    display: flex;
@@ -625,16 +628,18 @@ span {
 }
 
 
-.contact{
+.contact {
    min-height: auto;
    padding-bottom: 7rem;
 }
-contact form{
+
+contact form {
    max-width: 70rem;
    margin: 0 auto;
    text-align: center;
 }
-.contact form input-box{
+
+.contact form input-box {
    position: relative;
    display: flex;
    justify-content: space-between;
