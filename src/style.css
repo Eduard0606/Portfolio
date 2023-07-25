@@ -77,9 +77,9 @@ section {
 }
 
 .home {
-   background: url(/home.jpg) no-repeat;
+   /* background: url(/home.jpg) no-repeat;
    background-size: cover;
-   background-position: center;
+   background-position: center; */
    display: flex;
    align-items: center;
    height: 100vh;
