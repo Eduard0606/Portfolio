@@ -82,9 +82,10 @@ section {
 }
 
 .home {
-   background: url(/O1eUsE4bUsQ.jpg) no-repeat;
-   background-size: 600px;
-   background-position: right;
+   background: url(/Me.jpg) no-repeat;
+   background-size: cover;
+   background-position: center center;
+   background: 091928;
    display: flex;
    align-items: center;
    height: 100vh;
@@ -436,7 +437,7 @@ span {
    border-bottom: .2rem solid #123e5d;
    border-left: .2rem solid #00abf0;
    border-right: .2rem solid #00abf0;
-   
+
 }
 
 .about-content {
