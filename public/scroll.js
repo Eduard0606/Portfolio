@@ -1,4 +1,14 @@
+// toggle icon navbar
 
+let menuIcon = document.querySelector('#menu-icon')
+let navbar = document.querySelector('.navbar')
+menuIcon.onclick  = () => {
+    menuIcon.classList.toggle('bx-x')
+    navbar.classList.toggle('active')
+}
+
+
+// 
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 for (let smoothLink of smoothLinks) {
     smoothLink.addEventListener('click', function (e) {
@@ -35,3 +45,5 @@ window.onscroll = () => {
     let header = document.querySelector('header')
     header.classList.toggle('sticky', window.scrollY > 100) 
 }
+
+// Remove
