@@ -813,15 +813,15 @@ span {
   width: 100%;
   padding: 1rem 4%;
   background: #00abf0;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0,.2);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0,.2);
   z-index: 1;
   transition: 0.25s ease;
-  transition-delay: 0.25s;
+  transition-delay: .25s;
 }
 
 .navbar.active {
-  transition-delay: 0s;
   left: 0;
+  transition-delay: 0s;
 }
 .navbar .active-nav{
    position: absolute;
@@ -836,8 +836,8 @@ span {
    transition-delay: 0s;
 }
 .navbar.active .active-nav{
-   left: 0;
-   transition-delay: .25s;
+  left: 0;
+  transition-delay: .25s;
 }
 .navbar a {
    display: block;
