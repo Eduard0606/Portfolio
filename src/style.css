@@ -93,7 +93,8 @@ section {
 }
 
 .home-content {
-  max-width: 600px;
+  max-width: 60rem;
+  z-index: 99;
 }
 
 .home-content h1 {
@@ -109,7 +110,7 @@ section {
 
 .home-content .text-animate {
   position: relative;
-  width: 32.8rem;
+  width: 30.3rem;
 }
 
 .home-content h1::before {
@@ -124,14 +125,41 @@ section {
   animation-delay: 1s;
 }
 
-.home-content h3 {
-  position: relative;
-  font-size: 32px;
+.home-content .text-animate h3 {
+  font-size: 3.2rem;
   font-weight: 700;
-  -webkit-text-stroke: 0.7px #00abf0;
   color: transparent;
+  -webkit-text-stroke: 0.7px #00abf0;
+  background-image: linear-gradient(#00abf0, #00abf0);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: -33rem 0;
+  animation: homeBgText 6s linear infinite;
+  animation-delay: 2s;
 }
-
+.blockHidden::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #071a28;
+  animation: showRight 1s ease forwards;
+  animation-delay: 1.4s;
+}
+.home-content .text-animate h3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-right: 2px solid #00abf0;
+  z-index: -1;
+  animation: homeCursorText 6s linear infinite;
+  animation-delay: 2s;
+}
 .home-content h3::before {
   content: "";
   position: absolute;
@@ -343,17 +371,16 @@ button:hover::before {
   position: absolute;
   top: 0;
   right: 0px;
-  width: 50%;
+  width: 44%;
   height: 100%;
   background: transparent;
-  transition: 3s;
-  animation: manipActiveHover 0.1s forwards;
-  animation-delay: 4s;
-  pointer-events: none;
+  transition: 2s;
+  /* animation: manipActiveHover 0.1s forwards;
+  animation-delay: 4s; */
 }
 
 .home-imgHover:hover {
-  background: #081b29;
+  background: #071a28;
   opacity: 0.8;
 }
 
@@ -364,7 +391,7 @@ button:hover::before {
   right: 0;
   width: 100%;
   height: 100%;
-  background: #081b29;
+  background: #071a28;
   animation: showRight 1s ease forwards;
   animation-delay: 3s;
   z-index: 100;
@@ -377,11 +404,11 @@ button:hover::before {
   }
 }
 
-@keyframes manipActiveHover {
+/* @keyframes manipActiveHover {
   100% {
-    pointer-events: auto;
+    pointer-events: none;
   }
-}
+} */
 
 .about {
   display: flex;
@@ -433,6 +460,7 @@ span {
   border-bottom: 0.2rem solid #123e5d;
   border-left: 0.2rem solid #00abf0;
   border-right: 0.2rem solid #00abf0;
+  animation: aboutSpinner 8s linear infinite;
 }
 
 .about-content {
@@ -780,6 +808,9 @@ span {
   html {
     font-size: 55%;
   }
+  h3 {
+    word-break: none;
+  }
 }
 @media (max-width: 990px) {
   .header {
@@ -800,55 +831,150 @@ span {
   .header {
     background: #081b29;
   }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    padding: 1rem 4%;
+    background: #00abf0;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: 0.25s ease;
+    transition-delay: 0.25s;
+  }
+
+  .navbar.active {
+    left: 0;
+    transition-delay: 0s;
+  }
+  .navbar .active-nav {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    transition: 0.25s ease;
+    transition-delay: 0s;
+  }
+  .navbar.active .active-nav {
+    left: 0;
+    transition-delay: 0.25s;
+  }
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;
+    transform: translateX(-20rem);
+    transition: 0.25s ease;
+    transition-delay: 0s;
+  }
+
+  .navbar.active a {
+    transform: translateX(0);
+    transition-delay: 0.25s;
+  }
+
+  .home-imgHover {
+    pointer-events: none;
+    background: #071a28;
+    opacity: 0.6;
+  }
 }
 
-#menu-icon {
-  display: block;
+@media (max-width: 520px) {
+  html {
+    font-size: 50%;
+  }
+  .home-content h1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .home-sci {
+    width: 160px;
+  }
+  .home-sci a {
+    width: 38px;
+    height: 38px;
+  }
 }
 
-.navbar {
-  position: absolute;
-  top: 100%;
-  left: -100%;
-  width: 100%;
-  padding: 1rem 4%;
-  background: #00abf0;
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0,.2);
-  z-index: 1;
-  transition: 0.25s ease;
-  transition-delay: .25s;
+@media (max-width: 462px) {
+  .home-content h1 {
+    font-size: 5.2rem;
+  }
+  .education {
+    padding: 10rem 4% 5rem 5%;
+  }
+  .contact form .input-box .input-field {
+    width: 100%;
+  }
+  .footer {
+    flex-direction: column-reverse;
+  }
+  .footer p {
+    margin-top: 2rem;
+    text-align: center;
+  }
 }
 
-.navbar.active {
-  left: 0;
-  transition-delay: 0s;
+@media (max-width: 371px) {
+  .home {
+    justify-content: center;
+  }
+  .home-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px;
+  }
+  .home-content h1 {
+    font-size: 5rem;
+  }
 }
-.navbar .active-nav{
-   position: absolute;
-   top: 0;
-   left: -100%;
-   width: 100%;
-   height: 100%;
-   background:#081b29;
-   border-top: .1rem solid rgba(0, 0, 0,.2);
-   z-index: -1;
-   transition: .25s ease;
-   transition-delay: 0s;
-}
-.navbar.active .active-nav{
-  left: 0;
-  transition-delay: .25s;
-}
-.navbar a {
-   display: block;
-   font-size: 2rem;
-   margin: 3rem 0;
-   transform: translateX(-20rem);
-   transition: .25s ease;
-   transition-delay: 0s;
- } 
 
- .navbar.active a{
-   transform: translateX(0);
-   transition-delay: .25s;
- }
+/* KEYFRAMES */
+@keyframes homeBgText {
+  0%,
+  10%,
+  100% {
+    background-position: -30rem 0;
+  }
+  65%,
+  85% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes homeCursorText {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  65%,
+  78%,
+  85% {
+    width: 100%;
+    opacity: 1;
+  }
+  75%,
+  81% {
+    opacity: 0;
+  }
+}
+
+@keyframes aboutSpinner{
+  100%{
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

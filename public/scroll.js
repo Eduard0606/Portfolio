@@ -1,5 +1,4 @@
 // toggle icon navbar
-
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 
@@ -7,19 +6,6 @@ menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
 };
-
-const smoothLinks = document.querySelectorAll('a[href^="#"]');
-for (let smoothLink of smoothLinks) {
-  smoothLink.addEventListener("click", function (e) {
-    e.preventDefault();
-    const id = smoothLink.getAttribute("href");
-
-    document.querySelector(id).scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  });
-}
 
 // scroll sections
 let sections = document.querySelectorAll("section");
@@ -37,19 +23,31 @@ window.onscroll = () => {
       navLinks.forEach((links) => {
         links.classList.remove("active");
         document
-          .querySelector("header nav a[href*=" + id + "] ")
-          ?.classList.add("active");
+          .querySelector("header nav a[href*=" + id + "]")
+          .classList.add("active");
       });
     }
   });
 
   // sticky header
-
   let header = document.querySelector("header");
-
   header.classList.toggle("sticky", window.scrollY > 100);
+
+  // Remove toggle icon and navbar when click navbar links
+menuIcon.classList.remove("bx-x");
+navbar.classList.remove("active");
+
 };
 
-// Remove toggle icon and navbar when click navbar links
-    menuIcon.classList.remove("bx-x")
-    navbar.classList.remove("active")
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+for (let smoothLink of smoothLinks) {
+  smoothLink.addEventListener("click", function (e) {
+    e.preventDefault();
+    const id = smoothLink.getAttribute("href");
+
+    document.querySelector(id).scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+}
