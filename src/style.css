@@ -175,7 +175,7 @@ section {
 .home-content p {
   position: relative;
   font-size: 1.6rem;
-  margin: 2rem 0 4rem;
+  margin: 2rem 0 2rem;
 }
 
 .home-content p::before {
@@ -926,7 +926,7 @@ span {
   }
 }
 
-@media (max-width: 371px) {
+@media (max-width: 351px) {
   .home {
     justify-content: center;
   }
@@ -936,12 +936,23 @@ span {
     flex-direction: column;
     text-align: center;
     padding: 5px;
-    margin: 2rem;
+    margin-top: -4rem;
   }
   .home-content h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
+  }
+  .home-sci{
+    margin-top: -5px;
+   
+  }
+  div .btn-box{
+    margin-bottom: 10px;
   }
 }
+/* @media(max-width:321px){
+ .home-content h1{
+  }
+} */
 
 /* KEYFRAMES */
 @keyframes homeBgText {
