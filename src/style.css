@@ -926,7 +926,7 @@ span {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 371px) {
   .home {
     justify-content: center;
   }
@@ -936,10 +936,12 @@ span {
     flex-direction: column;
     text-align: center;
     padding: 5px;
+    margin: 10px;
   }
   .home-content h1 {
     font-size: 5rem;
   }
+  .
 }
 
 /* KEYFRAMES */
